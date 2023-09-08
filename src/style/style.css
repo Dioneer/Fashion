@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Lato';
-    src: url('Lato-Regular.woff2') format('woff2'),
-        url('Lato-Regular.woff') format('woff');
+    src: url('../fonts/Lato-Regular.woff2') format('woff2'),
+        url('../fonts/Lato-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -9,8 +9,8 @@
 
 @font-face {
     font-family: 'Lato';
-    src: url('Lato-Light.woff2') format('woff2'),
-        url('Lato-Light.woff') format('woff');
+    src: url('../fonts/Lato-Light.woff2') format('woff2'),
+        url('../fonts/Lato-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -18,8 +18,8 @@
 
 @font-face {
     font-family: 'Lato';
-    src: url('Lato-Black.woff2') format('woff2'),
-        url('Lato-Black.woff') format('woff');
+    src: url('../fonts/Lato-Black.woff2') format('woff2'),
+        url('../fonts/Lato-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
     font-display: swap;
@@ -27,8 +27,8 @@
 
 @font-face {
     font-family: 'Lato';
-    src: url('Lato-Bold.woff2') format('woff2'),
-        url('Lato-Bold.woff') format('woff');
+    src: url('../fonts/Lato-Bold.woff2') format('woff2'),
+        url('../fonts/Lato-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -36,8 +36,8 @@
 
 @font-face {
     font-family: 'Lato Hairline';
-    src: url('Lato-Hairline.woff2') format('woff2'),
-        url('Lato-Hairline.woff') format('woff');
+    src: url('../fonts/Lato-Hairline.woff2') format('woff2'),
+        url('../fonts/Lato-Hairline.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -65,8 +65,6 @@
 main{
 	flex: 1 1 auto;
 }
-.fullscreen__header {
-}
 .header-fullscreen {
 	position: fixed;
 	top: 0;
@@ -81,6 +79,7 @@ main{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: relative;
 }
 .header-fullscreen__logo-search {
 	display: flex;
@@ -101,6 +100,7 @@ svg:hover path {
 .header-fullscreen__burger {
 	display: flex;
 	align-items: center;
+	position: relative;
 }
 .header-fullscreen__menu {
 	display: inline-block;
@@ -143,6 +143,59 @@ svg:hover path {
 }
 .header-fullscreen__menu.active span{
 	transform: scale(0);
+}
+.header-fullscreen__dropmenu {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	height: 100vh;
+	top: 35px;
+	left: 0;
+	transition: all 0.3s 0s;
+	overflow: auto;
+	margin: 15px 0px 0px 0px;
+}
+.header-fullscreen__dropmenu.active{
+	opacity: 1;
+	visibility: visible;
+}
+.header-fullscreen__wrapper{
+	margin: auto;
+	min-width: 232px;
+	padding: 32px 32px 12px 32px;
+	background-color: #fff;
+}
+.header-fullscreen__title {
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 16px;
+	text-transform: uppercase;
+	margin: 0px 0px 24px 0px;
+}
+.header-fullscreen__list>li{
+	margin: 0px 0px 20px 0px;
+}
+.header-fullscreen__list>li:last-child{
+	margin: 0px 0px 70px 0px;
+}
+.header-fullscreen__link {
+	display: inline-block;
+	color: #F16D7F;
+	font-size: 14px;
+	line-height: 16px;
+	text-transform: uppercase;
+	margin: 0px 0px 12px 0px;
+}
+.header-fullscreen__sublist li{
+	margin: 0px 0px 11px 20px;
+}
+.header-fullscreen__sublist li:last-child{
+	margin: 0px 0px 0px 20px;
+}
+.header-fullscreen__sublink {
+	font-size: 14px;
+	line-height: 16px;
+	color:#6F6E6E;
 }
 .burger-item{
 margin: 0px 0px 0px 33px;
@@ -296,7 +349,7 @@ font-weight: 400;
 line-height: 29px;
 }
 .gallary__subtitle {
-	color: #F16D7F;
+color: #F16D7F;
 font-size: 24px;
 text-transform: uppercase;
 font-weight: 700;
@@ -451,9 +504,25 @@ line-height: 28px;
 	font-size: 28px;
 	line-height: 38px;
 }
-	
+.header-fullscreen__dropmenu{
+	position: fixed;
+	top: 75px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0px 0px 0px 0px;
 }
-
+.header-fullscreen__dropmenu.active{
+	opacity: 1;
+	visibility: visible;
+}
+}
+@media (min-width: 767.98px){
+	.nottouch .header-fullscreen__menu:hover .header-fullscreen__dropmenu{
+	opacity: 1;
+	visibility: visible;
+}
+}
 @media (max-width: 479.98px){
 	.header-fullscreen {
 		padding: 10px 0px;
@@ -476,5 +545,22 @@ line-height: 28px;
 }
 .gallary__img_big{
 	padding: 0px 0px 60% 0px;
+}
+}
+@media (max-height: 620px){
+	.ibg{
+	background-position: top;
+}
+}
+@media (max-height: 420px)and(max-width: 479.98px){
+.fullscreen__header {
+	min-height: 50px;
+	padding: 5px 0px;
+}
+.body-fullscreen__body{
+	padding: 60px 0px 0px 0px;
+}
+.header-fullscreen__dropmenu{
+	top:20px;
 }
 }

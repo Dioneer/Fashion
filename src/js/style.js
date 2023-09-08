@@ -5,10 +5,12 @@ document.addEventListener('DOMContentLoaded', (e) => {
 });
 
 function burger() {
-	let burgerButton = document.querySelector('.header-fullscreen__menu');
+	const burgerButton = document.querySelector('.header-fullscreen__menu');
+	const dropMenu = document.querySelector('.header-fullscreen__dropmenu');
 	if (burgerButton) {
 		burgerButton.addEventListener('click', () => {
 			burgerButton.classList.toggle('active')
+			dropMenu.classList.toggle('active')
 			document.body.classList.toggle('lock');
 		})
 	}
@@ -43,7 +45,6 @@ function mobChose() {
 function ibg() {
 	let imgbackround = document.querySelectorAll(".ibg");
 	if (imgbackround.length > 0) {
-		console.log(imgbackround)
 		imgbackround.forEach(imgbg => imgbg.style.backgroundImage = 'url(' + imgbg.querySelector('img').getAttribute('src') + ')');
 	}
 }
