@@ -387,7 +387,7 @@ line-height: 28px;
 .feturedItems__content {
 	display: grid;
 	gap: 18px;
-	grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .feturedItems__item {
@@ -492,6 +492,123 @@ line-height: 28px;
 	font-size: 14px;
 	line-height: 45px;
 }
+.dopInfo__body {
+	padding: 5% 0px;
+	background-color: #222224;
+}
+.dopInfo__column {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 30px;
+	align-items: center;
+}
+.column-dopInfo__item {
+	display: grid;
+	grid-auto-flow: row;
+	grid-template: minmax(auto, 55px) 1fr minmax(40px, 1fr)/1fr;
+	justify-items: center;
+}
+.column-dopInfo__img {
+	margin: 0px 0px 30px 0px;
+}
+.column-dopInfo__title {
+	font-size: 20px;
+	line-height: 24px;
+	color: #FBFBFB;
+	margin: 0px 0px 16px 0px;
+}
+.column-dopInfo__text {
+	font-size: 14px;
+	line-height: 17px;
+	color: #FBFBFB;
+	font-weight: 300;
+	text-align: center;
+}
+.subscribe__body {
+	padding: 5% 0px;
+	background: url('../img/main/bg.png') center/cover no-repeat;
+	position: relative;
+}
+.subscribe__body::after{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(244,244, 244, .6);
+}
+.subscribe__column {
+	display: grid;
+	grid-template-columns: repeat(auto-fit,  minmax(260px, 1fr));
+	gap: 15px;
+	align-items: center;
+	justify-items: end;
+}	
+.column-subscribe__image {
+	display: grid;
+	align-items: center;
+	grid-auto-flow: row;
+	grid-template: minmax(auto, 120px) 1fr/1fr;
+	max-width: 400px;
+	justify-self: start;
+	justify-items: center;
+	position: relative;
+	z-index: 2;
+}
+.column-subscribe__input{
+	display: grid;
+	align-items: center;
+	grid-auto-flow: row;
+	grid-template: minmax(auto, 120px) 1fr/1fr;
+	position: relative;
+	z-index: 2;
+}
+.column-subscribe__img {
+	background-color: #5D5D5D;
+	border-radius: 50%;
+	width: 80px;
+	height: 80px;
+}
+.column-subscribe__text {
+	color: #222224;
+	font-size: 20px;
+	line-height: 24px;
+	text-align: center;
+}
+.column-subscribe__title {
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 40px;
+	text-align: center;
+	color: #222224;
+	text-transform: uppercase;
+}
+.column-subscribe__subtitle {
+	font-size: 18px;
+	line-height: 30px;
+	text-align: center;
+	color: #222224;
+	text-transform: uppercase;
+}
+.column-subscribe__form {
+	display: flex;
+	border-radius: 20px;
+	overflow: hidden;
+}
+.form-column-subscribe__input {
+	display: flex;
+	height: 49px;
+	line-height: 49px;
+	padding: 7px;
+	background: #E1E1E1;
+	width: 100%;
+}
+.form-column-subscribe__btn{
+	background-color: #F16D7F;
+	padding: 10px;
+	color: #fff;
+}
 @media (max-width: 767.98px){
 	.body-fullscreen__title {
 	font-size: 22px;
@@ -516,7 +633,54 @@ line-height: 28px;
 	opacity: 1;
 	visibility: visible;
 }
+.column-dopInfo__img {
+	margin: 0px 0px 15px 0px;
 }
+.column-subscribe__image{
+	justify-self: center;
+}
+.subscribe__column{
+	justify-items: center;
+}
+}
+.footer__body {
+	background-color: #222224;
+	padding: 3% 0px;
+}
+.footer__column {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0px -15px;
+}
+.footer__item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0px 15px;
+	margin: 5px 0px;
+}
+.footer__text {
+	color: #FBFBFB;
+	font-size: 16px;
+	line-height: 20px;
+}
+.footer__list {
+	display: flex;
+}
+.footer__list li{
+	display: flex;
+	width: 32px;
+	height: 32px;
+	background-color: #fff;
+	margin: 0px 5px 0px 0px;
+	align-items: center;
+	justify-content: center;
+}
+.footer__list li:last-child {
+	margin: 0px;
+}
+
 @media (min-width: 767.98px){
 	.nottouch .header-fullscreen__menu:hover .header-fullscreen__dropmenu{
 	opacity: 1;
@@ -540,11 +704,24 @@ line-height: 28px;
 	padding: 0px 0px 0px 28px;
 }
 .body-fullscreen__title_b{
-	font-size: 48px;
-	line-height: 58px;
+	font-size: 36px;
+	line-height: 48px;
+}
+.body-fullscreen__title_p{
+	font-size: 36px;
 }
 .gallary__img_big{
 	padding: 0px 0px 60% 0px;
+}
+.column-subscribe__text{
+	font-size: 18px;
+}
+.column-subscribe__title{
+	font-size: 22px;
+}
+.column-subscribe__subtitle{
+	font-size: 14px;
+	line-height: 22px;
 }
 }
 @media (max-height: 620px){
