@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 	burger();
 	mobChose();
 	ibg();
+	colorSocial();
 });
 
 function burger() {
@@ -39,6 +40,21 @@ function mobChose() {
 		}
 	} else {
 		document.body.classList.add('nottouch');
+	}
+}
+
+function colorSocial() {
+	let svg = document.querySelectorAll(".footer__list li");
+	console.log(svg)
+	if (svg) {
+		svg.forEach(item => {
+			item.addEventListener("click", () => {
+				svg.forEach(social => {
+					social.classList.remove("active");
+				})
+				item.classList.add('active');
+			})
+		});
 	}
 }
 
